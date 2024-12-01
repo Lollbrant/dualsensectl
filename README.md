@@ -67,6 +67,11 @@ Also installed by Steam, so you may already have it configured. If not, create `
     # PS5 DualSense Edge controller over bluetooth hidraw
     KERNEL=="hidraw*", KERNELS=="*054C:0DF2*", MODE="0660", TAG+="uaccess"
 
+    # Disable Dualsense touchpad acting as mouse via USB
+    ATTRS{name}=="Sony Interactive Entertainment DualSense Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+
+    # Disable Dualsense touchpad acting as mouse via USB
+    ATTRS{name}=="DualSense Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
 Use `sudo udevadm trigger` to refresh udev rules without rebooting
 
 ### Credit
